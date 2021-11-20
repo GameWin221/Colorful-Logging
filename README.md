@@ -8,6 +8,10 @@
 
 -And maybe more in the future...
 
+# Example on Windows 10 CMD
+![Example](https://user-images.githubusercontent.com/72656547/142733311-b12b4fd2-2128-4003-9170-0124ec769bfc.png)
+
+
 # How to include it in your project?
 Only thing you need to do is `#include "ColorfulLogging.h"` in your project's files.
 
