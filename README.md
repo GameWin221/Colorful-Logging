@@ -12,4 +12,4 @@
 Only thing you need to do is `#include "ColorfulLogging.h"` in your project's files.
 
 # Documenation
-The whole and only documenation is in the "Example.cpp" file.
+The whole and only documenation is in the `Example.cpp` file.
