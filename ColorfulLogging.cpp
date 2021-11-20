@@ -66,7 +66,7 @@ namespace cl
 
 #ifdef DEBUG_MODE
 		else
-			Log("[CL] Failed to begin a benchmark - Benchmark called \"" + bechmarkName + "\" already exists!\n", Level::Warn);
+			Log("[CL] Failed to begin a benchmark - Benchmark called \"" + bechmarkName + "\" already exists!\n", Level::Warning);
 #endif
 	}
 
@@ -82,7 +82,7 @@ namespace cl
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to get time of a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warn);
+			Log("[CL] Failed to get time of a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}
@@ -100,7 +100,7 @@ namespace cl
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to reset a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warn);
+			Log("[CL] Failed to reset a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}
@@ -118,7 +118,7 @@ namespace cl
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to stop a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warn);
+			Log("[CL] Failed to stop a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}
