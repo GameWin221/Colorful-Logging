@@ -14,6 +14,7 @@
 
 # How to include it in your project?
 -Put both `ColorfulLogging.h` and `ColorfulLogging.cpp` in one folder.
+
 -`#include "ColorfulLogging.h"` in your project file.
 
 # Documenation
