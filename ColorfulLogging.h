@@ -26,7 +26,7 @@ namespace cl
 
 // UTILITY
 #ifdef _WIN32
-	enum Color
+	enum struct Color
 	{
 		Blank,
 		DarkBlue,
@@ -47,7 +47,7 @@ namespace cl
 		Default = DarkWhite
 	};
 #else
-	enum Color
+	enum struct Color
 	{
 		Blank = 30,
 		DarkBlue = 34,
@@ -69,7 +69,7 @@ namespace cl
 	};
 #endif
 
-	enum Level
+	enum struct Level
 	{
 		Info    = Color::White,
 		Warning = Color::Yellow,
