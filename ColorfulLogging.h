@@ -12,6 +12,7 @@
 //#define DEBUG_MODE
 
 #ifdef _WIN32
+#define NOMINMAX
 #include <windows.h>
 #endif
 
@@ -24,7 +25,7 @@
 namespace cl
 {
 
-// UTILITY
+	// UTILITY
 #ifdef _WIN32
 	enum struct Color
 	{
@@ -71,30 +72,30 @@ namespace cl
 
 	enum struct Level
 	{
-		Info    = (int)Color::White,
+		Info = (int)Color::White,
 		Warning = (int)Color::Yellow,
-		Error   = (int)Color::Red,
+		Error = (int)Color::Red,
 		Success = (int)Color::Green
 	};
 
 
-// LOGGING
+	// LOGGING
 
-	// Returns current system time
+		// Returns current system time
 	extern std::string Time();
 
 	// Sets the color of printed console text
-	extern void SetConsoleColor(Color& color);
+	extern void SetConsoleColor(Color color);
 
 	// Prints text (and time if 'logTime' is true) on the default console. 'importance' is the color in which the text will be printed.
-	extern void Log(std::string text, Level& importance, bool logTime = true);
+	extern void Log(std::string text, Level importance, bool logTime = true);
 
 
 
 
-// BENCHMARKING
+	// BENCHMARKING
 
-	// Creates a 'bechmarkName' benchmark which contains the time of its start
+		// Creates a 'bechmarkName' benchmark which contains the time of its start
 	extern void BenchmarkBegin(std::string bechmarkName);
 
 	// Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.

@@ -31,7 +31,7 @@ namespace cl
 	void SetConsoleColor(Color color)
 	{
 #ifdef _WIN32
-		SetConsoleTextAttribute(hConsole, color);
+		SetConsoleTextAttribute(hConsole, static_cast<int>(color));
 #else
 		std::cout << "\033[" << static_cast<int>(color) << "m";
 #endif
