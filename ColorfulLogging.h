@@ -71,10 +71,10 @@ namespace cl
 
 	enum struct Level
 	{
-		Info    = Color::White,
-		Warning = Color::Yellow,
-		Error   = Color::Red,
-		Success = Color::Green
+		Info    = (int)Color::White,
+		Warning = (int)Color::Yellow,
+		Error   = (int)Color::Red,
+		Success = (int)Color::Green
 	};
 
 
@@ -84,10 +84,10 @@ namespace cl
 	extern std::string Time();
 
 	// Sets the color of printed console text
-	extern void SetConsoleColor(Color color);
+	extern void SetConsoleColor(Color& color);
 
 	// Prints text (and time if 'logTime' is true) on the default console. 'importance' is the color in which the text will be printed.
-	extern void Log(std::string text, Level importance, bool logTime = true);
+	extern void Log(std::string text, Level& importance, bool logTime = true);
 
 
 
