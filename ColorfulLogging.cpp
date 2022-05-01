@@ -1,4 +1,4 @@
-// Made by Mateusz Antkiewicz
+// Copyright (c) 2021 Mateusz Antkiewicz
 // Github Repository: https://github.com/GameWin221/Colorful-Logging
 
 #include "ColorfulLogging.h"
