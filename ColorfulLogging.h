@@ -22,7 +22,7 @@
 
 #include <iostream>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <chrono>
 
 // Colorful Logging
@@ -99,17 +99,17 @@ namespace cl
 
 	// BENCHMARKING
 
-		// Creates a 'bechmarkName' benchmark which contains the time of its start
-	extern void BenchmarkBegin(std::string bechmarkName);
+		// Creates a 'benchmarkName' benchmark which contains the time of its start
+	extern void BenchmarkBegin(std::string benchmarkName);
 
 	// Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	extern double BenchmarkGetTime(std::string bechmarkName);
+	extern double BenchmarkGetTime(std::string benchmarkName);
 
 	// Resets the 'benchmarkName' benchmark. Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	extern double BenchmarkReset(std::string bechmarkName);
+	extern double BenchmarkReset(std::string benchmarkName);
 
 	// Removes the 'benchmarkName' benchmark. Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	extern double BenchmarkStop(std::string bechmarkName);
+	extern double BenchmarkStop(std::string benchmarkName);
 
 	// Stops all currently running benchmarks.
 	extern void BenchmarkStopAll();

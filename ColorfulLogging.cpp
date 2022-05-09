@@ -12,7 +12,7 @@ namespace cl
 #endif
 
 	// A map of running benchmarks
-	std::map<std::string, std::chrono::system_clock::time_point> benchmarks;
+	std::unorderer_map<std::string, std::chrono::system_clock::time_point> benchmarks;
 
 
 	// Returns current system time
@@ -56,69 +56,69 @@ namespace cl
 
 	// BENCHMARKING
 
-		// Creates a 'bechmarkName' benchmark which contains the time of its start
-	void BenchmarkBegin(std::string bechmarkName)
+		// Creates a 'benchmarkName' benchmark which contains the time of its start
+	void BenchmarkBegin(std::string benchmarkName)
 	{
-		if (benchmarks.count(bechmarkName) == 0)
+		if (benchmarks.count(benchmarkName) == 0)
 		{
-			benchmarks[bechmarkName] = std::chrono::system_clock::now();
+			benchmarks[benchmarkName] = std::chrono::system_clock::now();
 		}
 
 #ifdef DEBUG_MODE
 		else
-			Log("[CL] Failed to begin a benchmark - Benchmark called \"" + bechmarkName + "\" already exists!\n", Level::Warning);
+			Log("[CL] Failed to begin a benchmark - Benchmark called \"" + benchmarkName + "\" already exists!\n", Level::Warning);
 #endif
 	}
 
 	// Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	double BenchmarkGetTime(std::string bechmarkName)
+	double BenchmarkGetTime(std::string benchmarkName)
 	{
-		if (benchmarks.count(bechmarkName) != 0)
+		if (benchmarks.count(benchmarkName) != 0)
 		{
 			auto now = std::chrono::system_clock::now();
-			std::chrono::duration<double> diff = now - benchmarks[bechmarkName];
+			std::chrono::duration<double> diff = now - benchmarks[benchmarkName];
 			return diff.count();
 		}
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to get time of a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
+			Log("[CL] Failed to get time of a benchmark - Benchmark called \"" + benchmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}
 	}
 
 	// Resets the 'benchmarkName' benchmark. Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	double BenchmarkReset(std::string bechmarkName)
+	double BenchmarkReset(std::string benchmarkName)
 	{
-		if (benchmarks.count(bechmarkName) != 0)
+		if (benchmarks.count(benchmarkName) != 0)
 		{
-			double time = BenchmarkGetTime(bechmarkName);
-			benchmarks[bechmarkName] = std::chrono::system_clock::now();
+			double time = BenchmarkGetTime(benchmarkName);
+			benchmarks[benchmarkName] = std::chrono::system_clock::now();
 			return time;
 		}
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to reset a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
+			Log("[CL] Failed to reset a benchmark - Benchmark called \"" + benchmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}
 	}
 
 	// Removes the 'benchmarkName' benchmark. Returns time elapsed since the benchmark's start in seconds. Will return -1.0 if 'benchmarkName' is invalid.
-	double BenchmarkStop(std::string bechmarkName)
+	double BenchmarkStop(std::string benchmarkName)
 	{
-		if (benchmarks.count(bechmarkName) != 0)
+		if (benchmarks.count(benchmarkName) != 0)
 		{
-			double time = BenchmarkGetTime(bechmarkName);
-			benchmarks.erase(bechmarkName);
+			double time = BenchmarkGetTime(benchmarkName);
+			benchmarks.erase(benchmarkName);
 			return time;
 		}
 		else
 		{
 #ifdef DEBUG_MODE
-			Log("[CL] Failed to stop a benchmark - Benchmark called \"" + bechmarkName + "\" doesn't exists!\n", Level::Warning);
+			Log("[CL] Failed to stop a benchmark - Benchmark called \"" + benchmarkName + "\" doesn't exists!\n", Level::Warning);
 #endif
 			return -1.0;
 		}

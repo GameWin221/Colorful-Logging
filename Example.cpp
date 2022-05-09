@@ -24,10 +24,10 @@
 // std::string Time()
 // void   SetConsoleColor(Color color)
 // void   Log(std::string text, Level importance, bool logTime = true)
-// void   BenchmarkBegin(std::string bechmarkName)
-// double BenchmarkGetTime(std::string bechmarkName)
-// double BenchmarkReset(std::string bechmarkName)
-// double BenchmarkStop(std::string bechmarkName)
+// void   BenchmarkBegin(std::string benchmarkName)
+// double BenchmarkGetTime(std::string benchmarkName)
+// double BenchmarkReset(std::string benchmarkName)
+// double BenchmarkStop(std::string benchmarkName)
 // void   BenchmarkStopAll()
 // 
 // They are all explained later on.
